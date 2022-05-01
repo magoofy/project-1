@@ -45,10 +45,7 @@ var getParkInfo = function(location) {
         alert("Unable to connect to Natioal Park Services")
     })
 }
-
-
-
-
+  
 // Event listener for the submit button
 searchBtn.addEventListener("click", formSubmitHandler);
 // Event listener for 'enter' key
