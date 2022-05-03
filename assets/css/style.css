@@ -4,7 +4,7 @@
   }
 
 
-.ol-attribution, ul {
+.ol-attribution ul {
   list-style: none;
   position: absolute;
   bottom: 0px;

@@ -4,7 +4,7 @@ var searchBtn = document.querySelector("#search-btn");
 var searchedLocation = document.querySelector("#searched-location")
 var parkContainer = document.querySelector("#park-container");
 
-// MAP SCRIPTS
+// DISPLAY MAP js
 var coordinate = [-119,37]
 var map = new ol.Map({
   target: 'map',
@@ -113,19 +113,20 @@ searchedLocation.addEventListener("keypress", function (event) {
   }
 });
 
-// Event listener for search result cards
-// $(".park-card").on("click",changeMap());
+// Event listener for search result cards (if you click on a search result it will display on map)
 $("main").on("click", "a", function() {
   console.log("search result clicked");
-  var lat = parseInt($(this).attr("latitude"))
-  var lon = parseInt($(this).attr("longitude"))
-  map.setCenter(new ol.View({
-      // projection: ol.proj.get('EPSG:4326'),
-      // resolutions: [28.0, 14.0, 7.0, 3.5, 1.75, 0.875, 0.4375, 0.21875, 0.109375],
+  var lat = parseFloat($(this).attr("latitude"))
+  var lon = parseFloat($(this).attr("longitude"))
+  console.log(lon);
+  console.log(lat);
+
+  map.setView(new ol.View({
       center: ol.proj.fromLonLat([lon, lat]),
-      zoom: 10
-      // resolution: 0.21875
+      zoom: 14
     }));
   });
 
 
+
+  
