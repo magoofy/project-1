@@ -10,3 +10,25 @@
   bottom: 0px;
   width: 100%;
 }
+
+.scroll {
+  overflow-y: scroll;
+  height: 445px;
+}
+
+/*Home Page styling*/
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.pos-rel {
+  position:relative;
+  margin: 15px;
+}
+.white {
+  color: white;
+}
