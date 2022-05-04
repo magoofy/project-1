@@ -20,7 +20,16 @@ var map = new ol.Map({
     })
 });
 
+// Homepage
+var getStateCode = function() {
 
+    var queryString = document.location.search;
+    var stateCode = queryString.split("=")[1];
+  
+    if (stateCode) {
+      getParkInfo(stateCode);
+    }
+}
 
 // Runs when submit button is clicked
 var formSubmitHandler = function (event) {
@@ -68,7 +77,7 @@ var displayParks = function (location) {
 
     parkContainer.textContent = "";
 
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < 10; i++) {
         console.log(location.data[i].latitude);
         console.log(location.data[i].longitude);
         var parkCard = document.createElement("a")
@@ -128,5 +137,6 @@ $("main").on("click", "a", function () {
 });
 
 
+getStateCode();
 
 
