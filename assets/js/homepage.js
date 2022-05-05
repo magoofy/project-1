@@ -3,7 +3,7 @@ var submitBtn = document.querySelector("#submit-btn");
 
 var passParam = function() {
     state = stateCode.value.trim()
-    window.open("index.html?state=" + state,'_self');
+    window.open("resultspage.html?state=" + state,'_self');
 }
 
 submitBtn.addEventListener("click", passParam);
