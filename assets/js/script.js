@@ -62,7 +62,6 @@ var formSubmitHandlerEnter = function () {
 
 // Links the website to the park API
 var getParkInfo = function (location) {
-    console.log(location);
     var apiUrl = "https://developer.nps.gov/api/v1/parks?stateCode=" + location + "&api_key=mAgL5ygwIf8s4dQRtaUvaEjd3ZhfFsCBQATeElnc"
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
@@ -80,13 +79,10 @@ var getParkInfo = function (location) {
 
 // Function Displays park Info
 var displayParks = function (location) {
-  console.log(location);
 
   parkContainer.textContent = "";
 
   for (i = 0; i < 10; i++) {
-    console.log(location.data[i].latitude);
-    console.log(location.data[i].longitude);
     var parkCard = document.createElement("a")
     parkCard.classList = "list-group-item list-group-item-action flex-column align-items-start park-card"
     // set latitude and longitude and fullName attributes for each search result
